@@ -1,18 +1,17 @@
 const { Model, DataTypes, Sequelize } = require('sequelize');
 
-const USER_TABLE = 'users';
+const PRODUCT_TABLE = 'products';
 
-const UserSchema = {
+const ProductSchema = {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: DataTypes.INTEGER
   },
-  email: {
+  emali: {
     allowNull: false,
-    type: DataTypes.STRING,
-    unique: true
+    type: DataTypes.email,
   },
   password: {
     allowNull: false,
@@ -34,7 +33,7 @@ class User extends Model {
   static config(sequelize) {
     return {
       sequelize,
-      tableName: USER_TABLE,
+      tableName: PRODUCT_TABLE,
       modelName: 'User',
       timestamps: false
     }
